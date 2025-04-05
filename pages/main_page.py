@@ -8,7 +8,7 @@ class MainPageSamokat:
     QUESTION_LOCATORS = [(By.ID, 'accordion__heading-0'), (By.ID, 'accordion__heading-1'),
                          (By.ID, 'accordion__heading-2'), (By.ID, 'accordion__heading-3'),
                          (By.ID, 'accordion__heading-4'), (By.ID, 'accordion__heading-5'),
-                         (By.ID, 'accordion__heading-6'), (By.ID, 'accordion__heading-7') ]
+                         (By.ID, 'accordion__heading-6'), (By.ID, 'accordion__heading-7')]
 
     TEXT_QUESTION_LOC = [(By.ID, 'accordion__panel-0'), (By.ID, 'accordion__panel-1'),
                          (By.ID, 'accordion__panel-2'), (By.ID, 'accordion__panel-3'),
