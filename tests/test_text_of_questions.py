@@ -2,6 +2,8 @@ import allure
 import pytest
 import data
 from pages.main_page import MainPageSamokat
+from locators.main_page_locators import MainPageLocators
+
 
 class TestCardNames:
     @allure.title("Тест названий карточек")
@@ -12,6 +14,7 @@ class TestCardNames:
         main_page = MainPageSamokat(driver)
         main_page.wait_for_card_list()
         # Act
+        main_page.click_on_element(MainPageLocators.COOKIE)
         main_page.click_on_card(questions_number)
         # Assert
         assert main_page.check_card_name(questions_number, expected_text)
