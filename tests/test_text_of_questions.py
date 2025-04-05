@@ -1,6 +1,5 @@
 import allure
 import pytest
-
 import data
 from pages.main_page import MainPageSamokat
 
