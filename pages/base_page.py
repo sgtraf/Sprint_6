@@ -26,3 +26,9 @@ class BasePage:
     def get_text_on_element(self, locator, timeout=10):
         element = self.wait_for_element(locator, timeout)
         return element.text
+
+    @allure.step("Ввести текст в поле ввода")
+    def send_keys_to_input(self, locator, keys, timeout=10):
+        element = self.wait_for_element(locator, timeout)
+        element.clear()
+        element.send_keys(keys)
