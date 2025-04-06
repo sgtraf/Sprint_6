@@ -6,7 +6,7 @@ from locators.main_page_locators import MainPageLocators
 
 
 class TestCardNames:
-    @allure.title("Тест названий карточек")
+    @allure.title("Тест текста ответов на вопросы")
     @pytest.mark.parametrize('questions_number, expected_text', data.Data.questions_names)
     def test_card_names(self, driver, questions_number, expected_text):
         # Arrange
@@ -14,7 +14,6 @@ class TestCardNames:
         main_page = MainPageSamokat(driver)
         main_page.wait_for_card_list()
         # Act
-        main_page.click_on_element(MainPageLocators.COOKIE)
         main_page.click_on_card(questions_number)
         # Assert
         assert main_page.check_card_name(questions_number, expected_text)

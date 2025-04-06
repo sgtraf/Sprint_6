@@ -10,7 +10,7 @@ from curl import *
 @pytest.fixture
 #открывает и закрывает вебдрайвер
 def driver():
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox()
     browser.get(main_site)
     yield browser
     browser.quit()
