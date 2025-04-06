@@ -6,10 +6,12 @@ class MainPageLocators:
     COOKIE = (By.CLASS_NAME, "App_CookieButton__3cvqF")
     YANDEX_BUTTON = (By.CLASS_NAME, "Header_LogoYandex__3TSOI")
     SAMOKAT_BUTTON = (By.CLASS_NAME, "Header_LogoScooter__3lsAR")
+    DZEN_SEARCH = (By.CLASS_NAME, "xa2987efd")
 
     @staticmethod
     def question_number(question):
         return By.ID, f'accordion__heading-{question}'
+
     @staticmethod
     def question_text(question):
         return By.ID, f'accordion__panel-{question}'

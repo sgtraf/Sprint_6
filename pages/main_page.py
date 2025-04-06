@@ -27,3 +27,7 @@ class MainPageSamokat(BasePage):
         card_locator = MainPageLocators.question_text(questions_number)
         actual_text = self.get_text_on_element(card_locator)
         return actual_text == expected_text
+
+    @allure.step("Переход на вторую вкладку браузера")
+    def switch_to_next_tab(self):
+        self.driver.switch_to.window(self.driver.window_handles[1])

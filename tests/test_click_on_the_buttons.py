@@ -1,0 +1,21 @@
+import allure
+import pytest
+import curl
+from pages.main_page import MainPageSamokat
+from locators.main_page_locators import MainPageLocators
+
+
+
+class TestRedirectFromButtons:
+    @allure.title("Тест редиректа с нажатия на кнопку Яндекс ")
+    def test_yandex_button(self, driver):
+        # Arrange
+        driver = driver
+        main_page = MainPageSamokat(driver)
+        main_page.wait_for_questions_list()
+        # Act
+        main_page.click_on_element(MainPageLocators.YANDEX_BUTTON)
+        main_page.switch_to_next_tab()
+        main_page.wait_for_element(MainPageLocators.DZEN_SEARCH)
+        # Assert
+        assert driver.current_url == curl.DZEN_URL
