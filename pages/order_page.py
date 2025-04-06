@@ -18,17 +18,19 @@ class OrderPageSamokat(BasePage):
     def wait_for_title(self):
         self.wait_for_element(OrderPageLocators.TITLE)
 
+    @allure.step("Кликнуть на элемент")
+    def click_on_element(self, locator, timeout=10):
+        element = self.wait_for_element(locator, timeout)
+        element.click()
+
     @allure.step("Заполнить форму регистрации")
     def fill_registration_form(self, bandle):
         self.send_keys_to_input(OrderPageLocators.NAME, data.OrderData.order_data['Имя'][bandle])
         self.send_keys_to_input(OrderPageLocators.SURNAME, data.OrderData.order_data['Фамилия'][bandle])
         self.send_keys_to_input(OrderPageLocators.ADDRESS, data.OrderData.order_data['Адрес'][bandle])
         self.send_keys_to_input(OrderPageLocators.METRO, data.OrderData.order_data['Метро'][bandle])
-        #self.select_from_dropdown(OrderPageLocators.METRO)
         self.wait_for_element(OrderPageLocators.ELEMENT_LIST)
         self.click_on_element(OrderPageLocators.ELEMENT_LIST)
-        #self.click_on_element(OrderPageLocators.ELEMENT_LIST)
-
         self.send_keys_to_input(OrderPageLocators.PHONE, data.OrderData.order_data['Телефон'][bandle])
 
     @allure.step("Открыть вопрос")
