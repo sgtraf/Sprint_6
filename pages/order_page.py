@@ -1,12 +1,5 @@
 import allure
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 from locators.order_page_locators import OrderPageLocators
-from selenium.webdriver.support.ui import Select
-
-from locators.main_page_locators import MainPageLocators
 from locators.rent_page_locators import RentPageLocators
 from pages.base_page import BasePage
 import data
@@ -43,12 +36,3 @@ class OrderPageSamokat(BasePage):
         self.send_keys_to_input(RentPageLocators.WHERE, data.OrderData.order_data['Дата'][bandle])
         self.click_on_element(RentPageLocators.TIME)
         self.click_on_element(RentPageLocators.ELEMENT_LIST)
-
-
-
-    @allure.step("Открыть вопрос")
-    def click_on_questions(self, questions_number):
-        card_locator = MainPageLocators.question_number(questions_number)
-        #print(card_locator)
-        self.scroll_to_element(card_locator)
-        self.click_on_element(card_locator)

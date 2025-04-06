@@ -1,5 +1,4 @@
 import allure
-import pytest
 import curl
 from pages.main_page import MainPageSamokat
 from locators.main_page_locators import MainPageLocators

@@ -1,6 +1,4 @@
 import allure
-import pytest
-import curl
 from pages.main_page import MainPageSamokat
 from pages.order_page import OrderPageSamokat
 
@@ -8,6 +6,7 @@ from locators.main_page_locators import MainPageLocators
 from locators.order_page_locators import OrderPageLocators
 from locators.rent_page_locators import RentPageLocators
 from locators.confirmation_page_locators import ConfirmationPageLocators
+from locators.order_ok_page_locators import OrderOkPageLocators
 
 class TestOrderFromTwoButtons:
     @allure.title("Тест заказа по нажатию на первую кнопку")
@@ -29,11 +28,7 @@ class TestOrderFromTwoButtons:
         order_page.click_on_element_button(RentPageLocators.BUTTON_NEXT)
 
         order_page.click_on_element(ConfirmationPageLocators.BUTTON_NEXT)
-
-
-
-
-        #assert driver.current_url == curl.ORDER_URL
+        assert order_page.get_text_on_element(OrderOkPageLocators.BUTTON) == 'Посмотреть статус'
 
     @allure.title("Тест заказа по нажатию на вторую кнопку")
     def test_order_from_second_button(self, driver):
@@ -50,4 +45,8 @@ class TestOrderFromTwoButtons:
         # Assert
         order_page.fill_registration_form(bandle)
         order_page.click_on_element(OrderPageLocators.BUTTON_NEXT)
-        #assert driver.current_url == curl.ORDER_URL
+        order_page.fill_rent_form(bandle)
+        order_page.click_on_element_button(RentPageLocators.BUTTON_NEXT)
+
+        order_page.click_on_element(ConfirmationPageLocators.BUTTON_NEXT)
+        assert order_page.get_text_on_element(OrderOkPageLocators.BUTTON) == 'Посмотреть статус'
