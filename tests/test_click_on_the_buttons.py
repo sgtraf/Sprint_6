@@ -1,10 +1,8 @@
 import allure
 import pytest
 import curl
-from curl import ORDER_URL
 from pages.main_page import MainPageSamokat
 from locators.main_page_locators import MainPageLocators
-
 
 
 class TestRedirectFromButtons:
