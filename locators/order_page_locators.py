@@ -3,10 +3,9 @@ from selenium.webdriver.common.by import By
 
 class OrderPageLocators:
     TITLE = (By.CLASS_NAME, "Order_Header__BZXOb")
-
-    QUESTIONS = (By.CLASS_NAME, "Home_FAQ__3uVm4")
-    COOKIE = (By.CLASS_NAME, "App_CookieButton__3cvqF")
-    YANDEX_BUTTON = (By.CLASS_NAME, "Header_LogoYandex__3TSOI")
-    SAMOKAT_BUTTON = (By.CLASS_NAME, "Header_LogoScooter__3lsAR")
-    DZEN_SEARCH = (By.CLASS_NAME, "xa2987efd")
-    FIRST_ORDER_BUTTON = "//div[@class='Header_Nav__AGCXC']/button[text()='Заказать']"
+    NAME = (By.XPATH, "//input[@placeholder='* Имя']")
+    SURNAME = (By.XPATH, "//input[@placeholder='* Фамилия']")
+    ADDRESS = (By.XPATH, "//input[@placeholder='* Адрес: куда привезти заказ']")
+    METRO = (By.XPATH, "//input[@placeholder='* Станция метро']")
+    PHONE = (By.XPATH, "//input[@placeholder='* Телефон: на него позвонит курьер']")
+    BUTTON_NEXT = (By.CLASS_NAME, "Button_Button__ra12g Button_Middle__1CSJM")
