@@ -2,7 +2,6 @@ import allure
 import pytest
 import data
 from pages.main_page import MainPageSamokat
-from locators.main_page_locators import MainPageLocators
 
 
 class TestCardNames:
@@ -12,8 +11,8 @@ class TestCardNames:
         # Arrange
         driver = driver
         main_page = MainPageSamokat(driver)
-        main_page.wait_for_card_list()
+        main_page.wait_for_questions_list()
         # Act
-        main_page.click_on_card(questions_number)
+        main_page.click_on_questions(questions_number)
         # Assert
-        assert main_page.check_card_name(questions_number, expected_text)
+        assert main_page.check_questions_name(questions_number, expected_text)
