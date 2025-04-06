@@ -6,6 +6,8 @@ from pages.order_page import OrderPageSamokat
 
 from locators.main_page_locators import MainPageLocators
 from locators.order_page_locators import OrderPageLocators
+from locators.rent_page_locators import RentPageLocators
+from locators.confirmation_page_locators import ConfirmationPageLocators
 
 class TestOrderFromTwoButtons:
     @allure.title("Тест заказа по нажатию на первую кнопку")
@@ -23,6 +25,13 @@ class TestOrderFromTwoButtons:
         # Assert
         order_page.fill_registration_form(bandle)
         order_page.click_on_element(OrderPageLocators.BUTTON_NEXT)
+        order_page.fill_rent_form(bandle)
+        order_page.click_on_element_button(RentPageLocators.BUTTON_NEXT)
+
+        order_page.click_on_element(ConfirmationPageLocators.BUTTON_NEXT)
+
+
+
 
         #assert driver.current_url == curl.ORDER_URL
 

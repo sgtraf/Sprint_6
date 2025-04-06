@@ -7,6 +7,7 @@ from locators.order_page_locators import OrderPageLocators
 from selenium.webdriver.support.ui import Select
 
 from locators.main_page_locators import MainPageLocators
+from locators.rent_page_locators import RentPageLocators
 from pages.base_page import BasePage
 import data
 
@@ -23,6 +24,11 @@ class OrderPageSamokat(BasePage):
         element = self.wait_for_element(locator, timeout)
         element.click()
 
+    @allure.step("Кликнуть на элемент кнопка как текст")
+    def click_on_element_button(self, locator, timeout=10):
+        element = self.wait_for_element(locator, timeout)
+        self.driver.execute_script("arguments[0].click();", element)
+
     @allure.step("Заполнить форму регистрации")
     def fill_registration_form(self, bandle):
         self.send_keys_to_input(OrderPageLocators.NAME, data.OrderData.order_data['Имя'][bandle])
@@ -32,6 +38,13 @@ class OrderPageSamokat(BasePage):
         self.wait_for_element(OrderPageLocators.ELEMENT_LIST)
         self.click_on_element(OrderPageLocators.ELEMENT_LIST)
         self.send_keys_to_input(OrderPageLocators.PHONE, data.OrderData.order_data['Телефон'][bandle])
+
+    def fill_rent_form(self, bandle):
+        self.send_keys_to_input(RentPageLocators.WHERE, data.OrderData.order_data['Дата'][bandle])
+        self.click_on_element(RentPageLocators.TIME)
+        self.click_on_element(RentPageLocators.ELEMENT_LIST)
+
+
 
     @allure.step("Открыть вопрос")
     def click_on_questions(self, questions_number):
