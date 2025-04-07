@@ -32,3 +32,7 @@ class BasePage:
         element = self.wait_for_element(locator, timeout)
         element.clear()
         element.send_keys(keys)
+
+    @allure.step("Переход на вторую вкладку браузера")
+    def switch_to_next_tab(self):
+        self.driver.switch_to.window(self.driver.window_handles[1])
