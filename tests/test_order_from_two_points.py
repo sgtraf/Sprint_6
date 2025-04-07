@@ -1,7 +1,6 @@
 import allure
 from pages.main_page import MainPageSamokat
 from pages.order_page import OrderPageSamokat
-
 from locators.main_page_locators import MainPageLocators
 from locators.order_page_locators import OrderPageLocators
 from locators.rent_page_locators import RentPageLocators
@@ -23,10 +22,12 @@ class TestOrderFromTwoButtons:
         order_page.wait_for_title()
         # Assert
         order_page.fill_registration_form(bandle)
+        #нажатие на кнопку
         order_page.click_on_element(OrderPageLocators.BUTTON_NEXT)
         order_page.fill_rent_form(bandle)
+        #нажатие на кнопку
         order_page.click_on_element_button(RentPageLocators.BUTTON_NEXT)
-
+        #нажатие на кнопку Да
         order_page.click_on_element(ConfirmationPageLocators.BUTTON_NEXT)
         assert order_page.get_text_on_element(OrderOkPageLocators.BUTTON) == 'Посмотреть статус'
 
@@ -44,9 +45,11 @@ class TestOrderFromTwoButtons:
         order_page.wait_for_title()
         # Assert
         order_page.fill_registration_form(bandle)
+        #нажатие на кнопку
         order_page.click_on_element(OrderPageLocators.BUTTON_NEXT)
         order_page.fill_rent_form(bandle)
+        #нажатие на кнопку
         order_page.click_on_element_button(RentPageLocators.BUTTON_NEXT)
-
+        #нажатие на кнопку Да
         order_page.click_on_element(ConfirmationPageLocators.BUTTON_NEXT)
         assert order_page.get_text_on_element(OrderOkPageLocators.BUTTON) == 'Посмотреть статус'

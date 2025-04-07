@@ -13,7 +13,6 @@ class MainPageSamokat(BasePage):
     @allure.step("Открыть вопрос")
     def click_on_questions(self, questions_number):
         card_locator = MainPageLocators.question_number(questions_number)
-        #print(card_locator)
         self.scroll_to_element(card_locator)
         self.click_on_element(card_locator)
 

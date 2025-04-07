@@ -11,7 +11,7 @@ class Data:
         [7, 'Да, обязательно. Всем самокатов! И Москве, и Московской области.']
     ]
 
-    # Order Data's text
+# Order Data's text
 class OrderData:
     order_data = {
         'Имя':['Миша', 'Маша'],

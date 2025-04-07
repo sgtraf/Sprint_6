@@ -32,6 +32,7 @@ class OrderPageSamokat(BasePage):
         self.click_on_element(OrderPageLocators.ELEMENT_LIST)
         self.send_keys_to_input(OrderPageLocators.PHONE, data.OrderData.order_data['Телефон'][bandle])
 
+    @allure.step("Заполнить форму аренды")
     def fill_rent_form(self, bandle):
         self.send_keys_to_input(RentPageLocators.WHERE, data.OrderData.order_data['Дата'][bandle])
         self.click_on_element(RentPageLocators.TIME)

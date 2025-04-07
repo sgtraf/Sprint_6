@@ -24,10 +24,10 @@ class TestRedirectFromButtons:
         driver = driver
         main_page = MainPageSamokat(driver)
         main_page.wait_for_questions_list()
-        #Предвариительн переходим на другую страницу
-        driver.get(curl.ORDER_URL)
+        #Предвариительно переходим на другую страницу
+        driver.get(curl.MAIN_URL + curl.ORDER_URL)
         # Клик на кнопку самоката
         main_page.click_on_element(MainPageLocators.SAMOKAT_BUTTON)
         main_page.wait_for_questions_list()
         # Assert
-        assert driver.current_url == curl.main_site
+        assert driver.current_url == curl.MAIN_URL
