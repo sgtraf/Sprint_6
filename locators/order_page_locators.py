@@ -10,4 +10,3 @@ class OrderPageLocators:
     PHONE = (By.XPATH, "//input[@placeholder='* Телефон: на него позвонит курьер']")
     BUTTON_NEXT = (By.XPATH, ".//button[text()='Далее']")
     ELEMENT_LIST = (By.XPATH, "//li[@class='select-search__row']")
-

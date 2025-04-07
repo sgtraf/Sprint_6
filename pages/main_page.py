@@ -21,4 +21,3 @@ class MainPageSamokat(BasePage):
         card_locator = MainPageLocators.question_text(questions_number)
         actual_text = self.get_text_on_element(card_locator)
         return actual_text == expected_text
-

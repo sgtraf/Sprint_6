@@ -10,7 +10,6 @@ class MainPageLocators:
     FIRST_ORDER_BUTTON = (By.XPATH, ".//div[@class='Header_Nav__AGCXC']/button[text()='Заказать']")
     SECOND_ORDER_BUTTON = (By.XPATH, ".//div[@class='Home_FinishButton__1_cWm']/button[text()='Заказать']")
 
-
     @staticmethod
     def question_number(question):
         return By.ID, f'accordion__heading-{question}'
